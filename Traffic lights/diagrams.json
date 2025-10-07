@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "author": "Sandra Kaiser",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": -70.35,
+      "left": -54,
+      "attrs": { "env": "micropython-20241129-v1.24.1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 82.8,
+      "left": -274.6,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 34.8,
+      "left": -274.6,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -13.2,
+      "left": -274.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 13.55,
+      "left": -182.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 109.55,
+      "left": -182.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 61.55,
+      "left": -182.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 179,
+      "left": -172.8,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -208.8,
+      "left": -142.2,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "led3:A", "r1:1", "green", [ "h28.8", "v-9.6" ] ],
+    [ "led2:A", "r3:1", "green", [ "h38.4", "v-9.6" ] ],
+    [ "led1:A", "r2:1", "green", [ "h28.8", "v-9.6" ] ],
+    [ "btn1:1.r", "pico:GP16", "green", [ "h163.4", "v-67.2" ] ],
+    [ "r1:2", "pico:GP15", "green", [ "h27.6", "v105.6" ] ],
+    [ "r3:2", "pico:GP14", "green", [ "h37.2", "v48" ] ],
+    [ "r2:2", "pico:GP13", "green", [ "v0" ] ],
+    [ "led3:C", "pico:GND.8", "green", [ "v-105.6", "h277.6" ] ],
+    [ "led2:C", "pico:GND.8", "green", [ "v-163.2", "h277.6" ] ],
+    [ "led1:C", "pico:GND.8", "green", [ "v-220.8", "h277.6" ] ],
+    [ "btn1:2.r", "pico:3V3", "green", [ "h221", "v-230.2" ] ],
+    [ "bz1:2", "pico:GP12", "black", [ "h38", "v211.2" ] ],
+    [ "bz1:1", "pico:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

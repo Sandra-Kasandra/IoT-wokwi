@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "author": "Sandra Kaiser",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": 54.35,
+      "left": -121.25,
+      "attrs": { "env": "micropython-20241129-v1.24.1" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -86.1, "left": 13.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "dht1:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "dht1:SDA", "pico:GP15", "green", [ "v249.6", "h-153.5" ] ],
+    [ "dht1:GND", "pico:GND.7", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

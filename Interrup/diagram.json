@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "Sandra Kaiser",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": { "env": "micropython-20241129-v1.24.1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 44.4,
+      "left": -130.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 80.75,
+      "left": -86.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 255.8,
+      "left": -19.2,
+      "attrs": { "color": "green", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "led1:A", "r1:1", "green", [ "v-28.8", "h38.4" ] ],
+    [ "r1:2", "pico:GP15", "green", [ "v0" ] ],
+    [ "led1:C", "pico:GND.8", "green", [ "h-18.8", "v-96", "h255.34" ] ],
+    [ "btn1:1.r", "pico:3V3", "red", [ "h67.4", "v-217.55" ] ],
+    [ "btn1:2.l", "pico:GP14", "black", [ "h-19.2", "v-67", "h163.2", "v3.21" ] ]
+  ],
+  "dependencies": {}
+}
